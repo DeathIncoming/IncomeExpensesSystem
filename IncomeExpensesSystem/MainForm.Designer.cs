@@ -33,6 +33,7 @@
             label1 = new Label();
             close = new Label();
             panel2 = new Panel();
+            residueBtn = new Button();
             logoutBtn = new Button();
             expenseBtn = new Button();
             incomeBtn = new Button();
@@ -42,6 +43,7 @@
             label2 = new Label();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
+            residueForm1 = new Controls.ResidueForm();
             dashboardForm1 = new Controls.DashboardForm();
             expensesForm1 = new Controls.ExpensesForm();
             incomeForm1 = new Controls.IncomeForm();
@@ -76,10 +78,10 @@
             // 
             label1.AutoSize = true;
             label1.Cursor = Cursors.Hand;
-            label1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(40, 9);
             label1.Name = "label1";
-            label1.Size = new Size(130, 18);
+            label1.Size = new Size(149, 20);
             label1.TabIndex = 3;
             label1.Text = "Доходы и расходы";
             // 
@@ -87,10 +89,10 @@
             // 
             close.AutoSize = true;
             close.Cursor = Cursors.Hand;
-            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            close.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             close.Location = new Point(1370, 9);
             close.Name = "close";
-            close.Size = new Size(18, 18);
+            close.Size = new Size(20, 20);
             close.TabIndex = 2;
             close.Text = "X";
             close.Click += close_Click;
@@ -98,6 +100,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 128, 0);
+            panel2.Controls.Add(residueBtn);
             panel2.Controls.Add(logoutBtn);
             panel2.Controls.Add(expenseBtn);
             panel2.Controls.Add(incomeBtn);
@@ -111,6 +114,22 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(235, 755);
             panel2.TabIndex = 1;
+            // 
+            // residueBtn
+            // 
+            residueBtn.FlatAppearance.BorderColor = Color.White;
+            residueBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
+            residueBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 128);
+            residueBtn.FlatStyle = FlatStyle.Flat;
+            residueBtn.Font = new Font("Microsoft Sans Serif", 12F);
+            residueBtn.ForeColor = Color.White;
+            residueBtn.Location = new Point(23, 431);
+            residueBtn.Name = "residueBtn";
+            residueBtn.Size = new Size(190, 40);
+            residueBtn.TabIndex = 8;
+            residueBtn.Text = "Остаток";
+            residueBtn.UseVisualStyleBackColor = true;
+            residueBtn.Click += residueBtn_Click;
             // 
             // logoutBtn
             // 
@@ -229,11 +248,19 @@
             panel3.Controls.Add(expensesForm1);
             panel3.Controls.Add(incomeForm1);
             panel3.Controls.Add(categoryForm1);
+            panel3.Controls.Add(residueForm1);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(235, 45);
             panel3.Name = "panel3";
             panel3.Size = new Size(1165, 755);
             panel3.TabIndex = 2;
+            // 
+            // residueForm1
+            // 
+            residueForm1.Location = new Point(0, 0);
+            residueForm1.Name = "residueForm1";
+            residueForm1.Size = new Size(1165, 755);
+            residueForm1.TabIndex = 4;
             // 
             // dashboardForm1
             // 
@@ -308,5 +335,7 @@
         private Controls.DashboardForm dashboardForm1;
         private Controls.IncomeForm incomeForm1;
         private Controls.ExpensesForm expensesForm1;
+        private Button residueBtn;
+        private Controls.ResidueForm residueForm1;
     }
 }
