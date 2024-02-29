@@ -208,6 +208,7 @@
             incomeSumTb.Name = "incomeSumTb";
             incomeSumTb.Size = new Size(254, 26);
             incomeSumTb.TabIndex = 6;
+            incomeSumTb.KeyPress += incomeSumTb_KeyPress;
             // 
             // label4
             // 

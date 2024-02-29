@@ -125,6 +125,14 @@ namespace IncomeExpensesSystem.Controls
                 incomeDescriptionTb.Text = selectedIncome.Description;
             }
         }
+
+        private void incomeSumTb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
 
