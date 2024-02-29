@@ -179,6 +179,7 @@
             expenseSumTb.Name = "expenseSumTb";
             expenseSumTb.Size = new Size(254, 26);
             expenseSumTb.TabIndex = 6;
+            expenseSumTb.KeyPress += expenseSumTb_KeyPress;
             // 
             // label4
             // 
