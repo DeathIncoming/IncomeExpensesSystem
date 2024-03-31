@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistryForm));
             registryShowPass = new CheckBox();
             registryBtn = new Button();
             registryPassword = new TextBox();
@@ -40,14 +41,14 @@
             registryLoginBtn = new Button();
             label6 = new Label();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             registryRepeatPassword = new TextBox();
             label1 = new Label();
             label7 = new Label();
             addUserIcon = new PictureBox();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)addUserIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // registryShowPass
@@ -141,10 +142,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 128, 0);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(registryLoginBtn);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -189,14 +190,6 @@
             label2.TabIndex = 1;
             label2.Text = "Доходы и расходы";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(134, 84);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 100);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
             // registryRepeatPassword
             // 
             registryRepeatPassword.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -228,12 +221,22 @@
             // 
             // addUserIcon
             // 
-            addUserIcon.Location = new Point(422, 422);
+            addUserIcon.BorderStyle = BorderStyle.FixedSingle;
+            addUserIcon.Location = new Point(648, 412);
             addUserIcon.Name = "addUserIcon";
-            addUserIcon.Size = new Size(133, 65);
+            addUserIcon.Size = new Size(100, 100);
             addUserIcon.TabIndex = 21;
             addUserIcon.TabStop = false;
             addUserIcon.Click += addUserIcon_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(133, 84);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(111, 100);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
             // 
             // RegistryForm
             // 
@@ -259,8 +262,8 @@
             Text = "RegistryForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)addUserIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -279,10 +282,10 @@
         private Button registryLoginBtn;
         private Label label6;
         private Label label2;
-        private PictureBox pictureBox1;
         private TextBox registryRepeatPassword;
         private Label label1;
         private Label label7;
         private PictureBox addUserIcon;
+        private PictureBox pictureBox1;
     }
 }
