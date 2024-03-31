@@ -64,5 +64,37 @@ namespace IncomeExpensesSystem
             expensesForm1.Visible = false;
             residueForm1.Visible = true;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (var originalImage = new Bitmap(openFileDialog.FileName))
+                    {
+                        pictureBox2.Image = ResizeImage(originalImage, new Size(100, 100));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при загрузке изображения: " + ex.Message);
+                }
+            }
+        }
+
+        private Image ResizeImage(Image image, Size size)
+        {
+            var resizedImage = new Bitmap(size.Width, size.Height);
+            using (var graphics = Graphics.FromImage(resizedImage))
+            {
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.DrawImage(image, 0, 0, size.Width, size.Height);
+            }
+            return resizedImage;
+        }
     }
 }
