@@ -21,6 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 **Распространяется под лицензией MIT**
+
 Copyright (c) 2024 Nikita Krasnoslobodtsev
 
 Данная лицензия разрешает лицам, получившим копию данного программного 
