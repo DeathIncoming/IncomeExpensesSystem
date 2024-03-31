@@ -43,8 +43,11 @@
             pictureBox1 = new PictureBox();
             registryRepeatPassword = new TextBox();
             label1 = new Label();
+            label7 = new Label();
+            addUserIcon = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)addUserIcon).BeginInit();
             SuspendLayout();
             // 
             // registryShowPass
@@ -68,7 +71,7 @@
             registryBtn.FlatStyle = FlatStyle.Flat;
             registryBtn.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             registryBtn.ForeColor = Color.White;
-            registryBtn.Location = new Point(422, 450);
+            registryBtn.Location = new Point(422, 507);
             registryBtn.Name = "registryBtn";
             registryBtn.Size = new Size(200, 50);
             registryBtn.TabIndex = 16;
@@ -127,10 +130,10 @@
             // 
             close.AutoSize = true;
             close.Cursor = Cursors.Hand;
-            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            close.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             close.Location = new Point(768, 9);
             close.Name = "close";
-            close.Size = new Size(18, 18);
+            close.Size = new Size(20, 20);
             close.TabIndex = 10;
             close.Text = "X";
             close.Click += close_Click;
@@ -213,11 +216,32 @@
             label1.TabIndex = 18;
             label1.Text = "Повторите пароль";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label7.Location = new Point(422, 390);
+            label7.Name = "label7";
+            label7.Size = new Size(247, 19);
+            label7.TabIndex = 20;
+            label7.Text = "Выберите иконку пользователя:";
+            // 
+            // addUserIcon
+            // 
+            addUserIcon.Location = new Point(422, 422);
+            addUserIcon.Name = "addUserIcon";
+            addUserIcon.Size = new Size(133, 65);
+            addUserIcon.TabIndex = 21;
+            addUserIcon.TabStop = false;
+            addUserIcon.Click += addUserIcon_Click;
+            // 
             // RegistryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 588);
+            Controls.Add(addUserIcon);
+            Controls.Add(label7);
             Controls.Add(registryRepeatPassword);
             Controls.Add(label1);
             Controls.Add(registryShowPass);
@@ -236,6 +260,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)addUserIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -257,5 +282,7 @@
         private PictureBox pictureBox1;
         private TextBox registryRepeatPassword;
         private Label label1;
+        private Label label7;
+        private PictureBox addUserIcon;
     }
 }

@@ -1,7 +1,4 @@
 ﻿using IncomeExpensesSystem.Models;
-using System.ComponentModel;
-using System.Reflection.Emit;
-using System.Windows.Forms;
 
 namespace IncomeExpensesSystem.Controls
 {
