@@ -178,9 +178,9 @@
             label6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label6.Location = new Point(599, 123);
             label6.Name = "label6";
-            label6.Size = new Size(48, 19);
+            label6.Size = new Size(50, 19);
             label6.TabIndex = 9;
-            label6.Text = "Item:";
+            label6.Text = "Дата:";
             // 
             // incomeDescriptionTb
             // 
