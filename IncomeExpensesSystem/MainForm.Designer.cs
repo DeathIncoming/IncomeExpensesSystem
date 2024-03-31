@@ -43,11 +43,11 @@
             label2 = new Label();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
-            residueForm1 = new Controls.ResidueForm();
             dashboardForm1 = new Controls.DashboardForm();
             expensesForm1 = new Controls.ExpensesForm();
             incomeForm1 = new Controls.IncomeForm();
             categoryForm1 = new Controls.CategoryForm();
+            residueForm1 = new Controls.ResidueForm();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -240,6 +240,7 @@
             pictureBox2.Size = new Size(100, 100);
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // panel3
             // 
@@ -254,13 +255,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1165, 755);
             panel3.TabIndex = 2;
-            // 
-            // residueForm1
-            // 
-            residueForm1.Location = new Point(0, 0);
-            residueForm1.Name = "residueForm1";
-            residueForm1.Size = new Size(1165, 755);
-            residueForm1.TabIndex = 4;
             // 
             // dashboardForm1
             // 
@@ -292,6 +286,13 @@
             categoryForm1.Size = new Size(1165, 755);
             categoryForm1.TabIndex = 0;
             categoryForm1.Visible = false;
+            // 
+            // residueForm1
+            // 
+            residueForm1.Location = new Point(0, 0);
+            residueForm1.Name = "residueForm1";
+            residueForm1.Size = new Size(1165, 755);
+            residueForm1.TabIndex = 4;
             // 
             // MainForm
             // 

@@ -78,6 +78,7 @@ namespace IncomeExpensesSystem
                     {
                         pictureBox2.Image = ResizeImage(originalImage, new Size(100, 100));
                     }
+                    pictureBox2.Image = new Bitmap(openFileDialog.FileName);
                 }
                 catch (Exception ex)
                 {
