@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorizeForm));
             panel1 = new Panel();
             loginRegistryBtn = new Button();
             label6 = new Label();
@@ -98,9 +99,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(134, 84);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(133, 84);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.Size = new Size(111, 100);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -108,10 +110,10 @@
             // 
             close.AutoSize = true;
             close.Cursor = Cursors.Hand;
-            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            close.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             close.Location = new Point(770, 9);
             close.Name = "close";
-            close.Size = new Size(18, 18);
+            close.Size = new Size(20, 20);
             close.TabIndex = 1;
             close.Text = "X";
             close.Click += close_Click;

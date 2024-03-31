@@ -1,4 +1,5 @@
 ﻿using IncomeExpensesSystem.Models;
+using System.Windows.Forms;
 
 namespace IncomeExpensesSystem
 {
@@ -63,9 +64,31 @@ namespace IncomeExpensesSystem
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 selectedIconPath = openFileDialog.FileName;
-                // Отображаем выбранную иконку в элементе управления PictureBox, если это необходимо
-                addUserIcon.Image = Image.FromFile(selectedIconPath);
+
+                try
+                {
+                    using (var originalImage = new Bitmap(openFileDialog.FileName))
+                    {
+                        // Масштабируем изображение до размера 100x100
+                        addUserIcon.Image = ResizeImage(originalImage, new Size(100, 100));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при загрузке изображения: " + ex.Message);
+                }
             }
+        }
+
+        private Image ResizeImage(Image image, Size size)
+        {
+            var resizedImage = new Bitmap(size.Width, size.Height);
+            using (var graphics = Graphics.FromImage(resizedImage))
+            {
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.DrawImage(image, 0, 0, size.Width, size.Height);
+            }
+            return resizedImage;
         }
     }
 }
