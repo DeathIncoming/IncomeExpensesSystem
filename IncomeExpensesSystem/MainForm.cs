@@ -74,6 +74,10 @@ namespace IncomeExpensesSystem
             {
                 try
                 {
+                    using (var originalImage = new Bitmap(openFileDialog.FileName))
+                    {
+                        pictureBox2.Image = ResizeImage(originalImage, new Size(100, 100));
+                    }
                     pictureBox2.Image = new Bitmap(openFileDialog.FileName);
                 }
                 catch (Exception ex)
@@ -81,6 +85,17 @@ namespace IncomeExpensesSystem
                     MessageBox.Show("Ошибка при загрузке изображения: " + ex.Message);
                 }
             }
+        }
+
+        private Image ResizeImage(Image image, Size size)
+        {
+            var resizedImage = new Bitmap(size.Width, size.Height);
+            using (var graphics = Graphics.FromImage(resizedImage))
+            {
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.DrawImage(image, 0, 0, size.Width, size.Height);
+            }
+            return resizedImage;
         }
     }
 }
