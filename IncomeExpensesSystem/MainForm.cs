@@ -4,10 +4,36 @@ namespace IncomeExpensesSystem
 {
     public partial class MainForm : Form
     {
+        private ContextDB profileManager;
         public MainForm(User user)
         {
             InitializeComponent();
             userNameLabel.Text = user.Name;
+            profileManager = new ContextDB();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            // Получаем текущего пользователя
+            User currentUser = profileManager.Users.FirstOrDefault(u => u.Name == userNameLabel.Text);
+
+            // Проверяем, что пользователь и путь к иконке существуют
+            if (currentUser != null && !string.IsNullOrEmpty(currentUser.IconPath))
+            {
+                try
+                {
+                    // Загружаем изображение из пути IconPath
+                    using (var originalImage = new Bitmap(currentUser.IconPath))
+                    {
+                        // Масштабируем и отображаем изображение
+                        pictureBox2.Image = ResizeImage(originalImage, new Size(100, 100));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при загрузке изображения: " + ex.Message);
+                }
+            }
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -63,27 +89,6 @@ namespace IncomeExpensesSystem
             incomeForm1.Visible = false;
             expensesForm1.Visible = false;
             residueForm1.Visible = true;
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    using (var originalImage = new Bitmap(openFileDialog.FileName))
-                    {
-                        pictureBox2.Image = ResizeImage(originalImage, new Size(100, 100));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ошибка при загрузке изображения: " + ex.Message);
-                }
-            }
         }
 
         private Image ResizeImage(Image image, Size size)
