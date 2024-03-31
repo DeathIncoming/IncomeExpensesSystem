@@ -64,5 +64,23 @@ namespace IncomeExpensesSystem
             expensesForm1.Visible = false;
             residueForm1.Visible = true;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pictureBox2.Image = new Bitmap(openFileDialog.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при загрузке изображения: " + ex.Message);
+                }
+            }
+        }
     }
 }
